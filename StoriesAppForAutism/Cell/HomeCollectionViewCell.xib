@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="aiE-BJ-kH2" customClass="HomeCollectionViewCell" customModule="StoriesAppForAutism" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="494" height="243"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vo0-4u-pWv" customClass="HomeCollectionViewCell" customModule="StoriesAppForAutism" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="494" height="243"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZUH-WZ-vMg">
+                        <rect key="frame" x="140" y="92.5" width="334" height="55"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мария и нейната учителка" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQS-4e-HtT">
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Средно трудна задача" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPD-Ab-LVe">
+                                <rect key="frame" x="0.0" y="34.5" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CQS-4e-HtT" secondAttribute="trailing" id="7j2-tz-EZQ"/>
+                            <constraint firstAttribute="trailing" secondItem="OPD-Ab-LVe" secondAttribute="trailing" id="I55-8O-Of9"/>
+                            <constraint firstItem="CQS-4e-HtT" firstAttribute="leading" secondItem="ZUH-WZ-vMg" secondAttribute="leading" id="a2D-zC-q0D"/>
+                            <constraint firstItem="OPD-Ab-LVe" firstAttribute="leading" secondItem="ZUH-WZ-vMg" secondAttribute="leading" id="s7u-gH-a7g"/>
+                        </constraints>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-cF-m4o">
+                        <rect key="frame" x="20" y="20" width="100" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="DeQ-4p-of3"/>
+                            <constraint firstAttribute="width" constant="100" id="MS3-Pe-wbA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wD9-cF-m4o" firstAttribute="leading" secondItem="Vo0-4u-pWv" secondAttribute="leading" constant="20" id="5ry-Mv-bcQ"/>
+                    <constraint firstItem="wD9-cF-m4o" firstAttribute="top" secondItem="Vo0-4u-pWv" secondAttribute="top" constant="20" id="EN7-Qh-kwM"/>
+                    <constraint firstItem="ZUH-WZ-vMg" firstAttribute="centerY" secondItem="wD9-cF-m4o" secondAttribute="centerY" id="L0N-Jb-Nms"/>
+                    <constraint firstItem="ZUH-WZ-vMg" firstAttribute="centerY" secondItem="Vo0-4u-pWv" secondAttribute="centerY" id="MOH-SY-VPS"/>
+                    <constraint firstAttribute="bottom" secondItem="wD9-cF-m4o" secondAttribute="bottom" constant="20" id="Y65-Eu-wcQ"/>
+                    <constraint firstAttribute="trailing" secondItem="ZUH-WZ-vMg" secondAttribute="trailing" constant="20" id="ghC-7P-Slr"/>
+                    <constraint firstItem="ZUH-WZ-vMg" firstAttribute="leading" secondItem="wD9-cF-m4o" secondAttribute="trailing" constant="20" id="nmw-II-Ycv"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="494" height="243"/>
+            <connections>
+                <outlet property="mainImageView" destination="wD9-cF-m4o" id="3ek-xl-35f"/>
+                <outlet property="scenarioDifficultyLevelLabel" destination="OPD-Ab-LVe" id="BvG-wv-MYv"/>
+                <outlet property="scenarioTitleLabel" destination="CQS-4e-HtT" id="d61-uz-HN8"/>
+            </connections>
+            <point key="canvasLocation" x="308.69565217391306" y="201.22767857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add" width="288" height="175"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

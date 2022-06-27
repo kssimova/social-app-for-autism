@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreLoginViewController" customModule="StoriesAppForAutism" customModuleProvider="target">
+            <connections>
+                <outlet property="adultGradientView" destination="c1l-Rw-ixr" id="50v-MR-cFi"/>
+                <outlet property="adultProfileDescriptionLabel" destination="oJX-tT-Pf0" id="yJS-5Z-H3x"/>
+                <outlet property="adultProfileImageView" destination="XlW-88-oax" id="w1j-n6-nJa"/>
+                <outlet property="adultProfileTitleLabel" destination="oQB-hq-BbV" id="ahu-lX-VmO"/>
+                <outlet property="adultProfileView" destination="chM-ch-0pm" id="1pd-Ow-awz"/>
+                <outlet property="childGradientView" destination="knv-94-3Lo" id="2cP-fq-9HL"/>
+                <outlet property="childProfileDescriptionLabel" destination="qc4-JG-v0T" id="WhX-uQ-WNo"/>
+                <outlet property="childProfileImageView" destination="wKB-mL-brr" id="4Gi-yC-AgN"/>
+                <outlet property="childProfileTitleLabel" destination="73h-eB-0Oz" id="ZGt-Cb-BnT"/>
+                <outlet property="childProfileView" destination="qSO-dG-x6C" id="cvh-Zc-4PQ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="yUb-Y5-Wlu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSO-dG-x6C">
+                    <rect key="frame" x="30" y="204" width="354" height="187"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knv-94-3Lo" customClass="DefaultGradientView" customModule="StoriesAppForAutism" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="187"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                    <color key="value" systemColor="systemYellowColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                    <color key="value" systemColor="systemPinkColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bear" translatesAutoresizingMaskIntoConstraints="NO" id="wKB-mL-brr">
+                            <rect key="frame" x="-20" y="-25" width="221" height="196"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="221" id="DOs-lY-hZn"/>
+                                <constraint firstAttribute="height" constant="196" id="H8R-Gc-Dks"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Детски профил" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73h-eB-0Oz">
+                            <rect key="frame" x="201" y="16" width="137" height="76"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Да четеш истории" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-JG-v0T">
+                            <rect key="frame" x="201" y="100" width="137" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="knv-94-3Lo" secondAttribute="bottom" id="5yc-EJ-1ic"/>
+                        <constraint firstAttribute="trailing" secondItem="qc4-JG-v0T" secondAttribute="trailing" constant="16" id="E8q-Jk-1lU"/>
+                        <constraint firstItem="wKB-mL-brr" firstAttribute="leading" secondItem="qSO-dG-x6C" secondAttribute="leading" constant="-20" id="FID-3H-LOG"/>
+                        <constraint firstItem="knv-94-3Lo" firstAttribute="top" secondItem="qSO-dG-x6C" secondAttribute="top" id="GTc-qh-fX2"/>
+                        <constraint firstItem="73h-eB-0Oz" firstAttribute="leading" secondItem="wKB-mL-brr" secondAttribute="trailing" id="Jcz-ek-AGm"/>
+                        <constraint firstAttribute="bottom" secondItem="wKB-mL-brr" secondAttribute="bottom" constant="16" id="M4A-yc-VWu"/>
+                        <constraint firstItem="qc4-JG-v0T" firstAttribute="top" secondItem="73h-eB-0Oz" secondAttribute="bottom" constant="8" id="T2S-vR-9lc"/>
+                        <constraint firstItem="knv-94-3Lo" firstAttribute="leading" secondItem="qSO-dG-x6C" secondAttribute="leading" id="VEp-nM-UyF"/>
+                        <constraint firstItem="qc4-JG-v0T" firstAttribute="leading" secondItem="wKB-mL-brr" secondAttribute="trailing" id="Zeu-De-dFg"/>
+                        <constraint firstAttribute="height" constant="187" id="d5w-Dz-RUj"/>
+                        <constraint firstAttribute="trailing" secondItem="73h-eB-0Oz" secondAttribute="trailing" constant="16" id="eFU-bh-VsR"/>
+                        <constraint firstAttribute="trailing" secondItem="knv-94-3Lo" secondAttribute="trailing" id="lGX-XA-KuF"/>
+                        <constraint firstItem="73h-eB-0Oz" firstAttribute="top" secondItem="qSO-dG-x6C" secondAttribute="top" constant="16" id="pCa-XU-Ghu"/>
+                    </constraints>
+                </view>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chM-ch-0pm">
+                    <rect key="frame" x="30" y="421" width="354" height="187"/>
+                    <subviews>
+                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="c1l-Rw-ixr" customClass="DefaultGradientView" customModule="StoriesAppForAutism" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="187"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                    <color key="value" systemColor="systemYellowColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                    <color key="value" systemColor="systemPinkColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профил на възрастен" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQB-hq-BbV">
+                            <rect key="frame" x="16" y="16" width="137" height="109.5"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="26"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Да пишеш истории" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-tT-Pf0">
+                            <rect key="frame" x="16" y="133.5" width="137" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="couple" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-88-oax">
+                            <rect key="frame" x="153" y="-25" width="221" height="196"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="196" id="CHS-IB-JaL"/>
+                                <constraint firstAttribute="width" constant="221" id="VKp-yB-RrS"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="oQB-hq-BbV" firstAttribute="top" secondItem="chM-ch-0pm" secondAttribute="top" constant="16" id="4MB-nT-476"/>
+                        <constraint firstAttribute="bottom" secondItem="XlW-88-oax" secondAttribute="bottom" constant="16" id="6jg-6I-k3R"/>
+                        <constraint firstItem="oJX-tT-Pf0" firstAttribute="leading" secondItem="chM-ch-0pm" secondAttribute="leading" constant="16" id="ALI-Lu-vmu"/>
+                        <constraint firstAttribute="bottom" secondItem="c1l-Rw-ixr" secondAttribute="bottom" id="AUk-pu-l6Y"/>
+                        <constraint firstItem="oJX-tT-Pf0" firstAttribute="top" secondItem="oQB-hq-BbV" secondAttribute="bottom" constant="8" id="AzR-TJ-sJb"/>
+                        <constraint firstAttribute="trailing" secondItem="c1l-Rw-ixr" secondAttribute="trailing" id="L0b-BI-XzK"/>
+                        <constraint firstAttribute="trailing" secondItem="XlW-88-oax" secondAttribute="trailing" constant="-20" id="XTH-Up-XLJ"/>
+                        <constraint firstItem="c1l-Rw-ixr" firstAttribute="leading" secondItem="chM-ch-0pm" secondAttribute="leading" id="YiA-0I-ww4"/>
+                        <constraint firstItem="c1l-Rw-ixr" firstAttribute="top" secondItem="chM-ch-0pm" secondAttribute="top" id="dSK-cw-HvX"/>
+                        <constraint firstAttribute="height" constant="187" id="iyS-SL-MJf"/>
+                        <constraint firstItem="oQB-hq-BbV" firstAttribute="leading" secondItem="chM-ch-0pm" secondAttribute="leading" constant="16" id="vv0-0j-uar"/>
+                        <constraint firstItem="XlW-88-oax" firstAttribute="leading" secondItem="oQB-hq-BbV" secondAttribute="trailing" id="wDA-KZ-YuC"/>
+                        <constraint firstItem="XlW-88-oax" firstAttribute="leading" secondItem="oJX-tT-Pf0" secondAttribute="trailing" id="yZ9-j3-PA5"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.25490196078431371" green="0.21176470588235294" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" red="0.52941176470588236" green="0.2627450980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="chM-ch-0pm" secondAttribute="trailing" constant="30" id="19g-8e-tO4"/>
+                <constraint firstItem="qSO-dG-x6C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="160" id="YrT-XY-JGI"/>
+                <constraint firstItem="qSO-dG-x6C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="e4d-7r-4YY"/>
+                <constraint firstItem="chM-ch-0pm" firstAttribute="top" secondItem="qSO-dG-x6C" secondAttribute="bottom" constant="30" id="rGu-yB-pru"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qSO-dG-x6C" secondAttribute="trailing" constant="30" id="zco-Z0-zqx"/>
+                <constraint firstItem="chM-ch-0pm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="zmV-3H-WGt"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bear" width="221" height="193"/>
+        <image name="couple" width="239" height="210"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
