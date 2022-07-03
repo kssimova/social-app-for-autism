@@ -60,13 +60,13 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Детски профил" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73h-eB-0Oz">
-                            <rect key="frame" x="201" y="16" width="137" height="76"/>
-                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                            <rect key="frame" x="201" y="16" width="137" height="67.5"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Да четеш истории" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-JG-v0T">
-                            <rect key="frame" x="201" y="100" width="137" height="16"/>
+                            <rect key="frame" x="201" y="91.5" width="137" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -110,23 +110,23 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профил на възрастен" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQB-hq-BbV">
-                            <rect key="frame" x="16" y="16" width="137" height="109.5"/>
-                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="26"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профил на възрастен" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQB-hq-BbV">
+                            <rect key="frame" x="16" y="16" width="158" height="62"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="22"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Да пишеш истории" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-tT-Pf0">
-                            <rect key="frame" x="16" y="133.5" width="137" height="16"/>
+                            <rect key="frame" x="16" y="86" width="158" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="couple" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-88-oax">
-                            <rect key="frame" x="153" y="-25" width="221" height="196"/>
+                            <rect key="frame" x="174" y="-25" width="200" height="196"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="196" id="CHS-IB-JaL"/>
-                                <constraint firstAttribute="width" constant="221" id="VKp-yB-RrS"/>
+                                <constraint firstAttribute="width" constant="200" id="VKp-yB-RrS"/>
                             </constraints>
                         </imageView>
                     </subviews>

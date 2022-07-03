@@ -23,10 +23,18 @@ class ReadingPhaseStepViewController: UIViewController {
     @IBOutlet weak var nextStepButtonImageView: UIImageView!
     @IBOutlet weak var nextStepButtonLabel: UILabel!
     
+    var viewModel: PhaseStepViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGestures()
         setupUI()
+    }
+    
+    private func setupGestures() {
+        let nextStepGesture = UITapGestureRecognizer(target: self, action: #selector(didTapNextStepButton))
+        nextStepButtonView.addGestureRecognizer(nextStepGesture)
     }
     
     private func setupUI() {
@@ -38,21 +46,25 @@ class ReadingPhaseStepViewController: UIViewController {
         
         headerImageView.image = UIImage(named: "readingPhase")
         
-        headerLabel.text = "Мария и нейната учителка"
+        headerLabel.text = viewModel.story?.title
         headerLabel.textColor = .black
         
         closeButton.setBackgroundImage(UIImage(named: "x")?.withRenderingMode(.alwaysTemplate), for: .normal)
         closeButton.tintColor = .black
         
-        stepLabel.text = "Стъпка 1 от 4"
+        stepLabel.text = String(format: "Стъпка %d от %d", viewModel.step, viewModel.story?.pages.count ?? 1)
         stepLabel.textColor = .black
         
-        questionTitleLabel.text = "Мария и нейната учителка си говорят."
+        questionTitleLabel.text = viewModel.story?.pages[viewModel.step - 1].description
         questionTitleLabel.textColor = .black
         
         questionView.backgroundColor = .white
         questionView.layer.cornerRadius = 16.0
         questionView.clipsToBounds = false
+        
+        if let url = viewModel.story?.pages[viewModel.step - 1].imageDownloadURL {
+            questionImageView.af_setImage(withURL: url, cacheKey: nil, placeholderImage: UIImage(named: "library"), serializer: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: false)
+        }
         
         nextStepButtonView.layer.cornerRadius = 16.0
         nextStepButtonView.backgroundColor = .dullPink
@@ -62,5 +74,18 @@ class ReadingPhaseStepViewController: UIViewController {
         nextStepButtonLabel.textColor = .white
         
         questionImageView.layer.cornerRadius = 16.0
+    }
+    
+    @IBAction func didTapCloseButton(_ sender: UIButton) {
+        viewModel.closeSelected()
+    }
+    
+    @objc func didTapNextStepButton() {
+        print("#### Did tap next button")
+        viewModel.nextStepSelected()
+    }
+    
+    deinit{
+        print("#### Deinit called on ReadingPhase")
     }
 }

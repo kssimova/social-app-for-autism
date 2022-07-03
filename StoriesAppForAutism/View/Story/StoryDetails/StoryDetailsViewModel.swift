@@ -26,6 +26,16 @@ class StoryDetailsViewModel {
         uploadCoverImage()
         uploadPagesImages()
         uploadQuestionsImages()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+            guard let bsModel = self?.baseStoryModel, let pages = self?.pagesDataSource, let questions = self?.questionsDataSource else {
+                return
+            }
+            
+            DatabaseService.shared.createStory(baseStoryModel: bsModel, pages: pages, questions: questions) {_ in
+                
+            }
+        }
     }
     
     private func uploadAudioFiles() {
@@ -60,7 +70,6 @@ class StoryDetailsViewModel {
     }
     
     private func uploadQuestionsImages() {
-        var counter = 0
         for question in questionsDataSource {
             StorageService.shared.uploadImage(folder: "questions", image: question.image) { [weak self] isSuccessful, url in
                 print("#### uploadQuestionsImages isSuccessful -> \(isSuccessful) ")
@@ -68,15 +77,6 @@ class StoryDetailsViewModel {
                     print("#### Completion handler returned, URL is not nil -> \(url)")
 
                     question.imageDownloadURL = url
-                }
-                
-                if counter == self?.questionsDataSource.count {
-                    guard let bsModel = self?.baseStoryModel, let pages = self?.pagesDataSource, let questions = self?.questionsDataSource else { return }
-                    
-                    DatabaseService.shared.createStory(baseStoryModel: bsModel, pages: pages, questions: questions) {_ in 
-                        
-                    }
-                    print("#### All questions uploaded, saving story to realtime")
                 }
             }
         }

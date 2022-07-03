@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ChildLoginViewController: UIViewController {
     @IBOutlet weak var loginView: UIView!
@@ -19,8 +20,8 @@ class ChildLoginViewController: UIViewController {
     @IBOutlet weak var loginButtonView: UIView!
     
     @IBOutlet weak var loginButtonLabel: UILabel!
-//
-//    var backSelected : (() -> ()) = { }
+    
+    var viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class ChildLoginViewController: UIViewController {
     }
     
     private func setupGestures() {
-        let loginGR = UITapGestureRecognizer(target: self, action: #selector(didTapLogin))
+        let loginGR = UITapGestureRecognizer(target: self, action: #selector(didTapLoginButton))
         loginButtonView.addGestureRecognizer(loginGR)
     }
     
@@ -62,23 +63,28 @@ class ChildLoginViewController: UIViewController {
         textField.delegate = self
         textField.layer.cornerRadius = 16.0
         textField.clipsToBounds = true
+        textField.textColor = .black
         textField.backgroundColor = .veryLightGray
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkerLightGray])
     }
     
-    @objc func didTapLogin() {
+    @objc func didTapLoginButton() {
         print("#### Child login pressed...")
         if(usernameTextField.text?.isEmpty ?? true || passwordTextField.text?.isEmpty ?? true) {
-            print("#### username or password empty..")
             wrongInputLabel.handleWrongInput(text: "Полетата не трябва да бъдат празни!")
         } else {
-            DatabaseService.shared.login(email: usernameTextField.text!, password: passwordTextField.text!) { [weak self] auithResult in
-                print("#### Completion block returned -> \(auithResult)")
-                if let result = auithResult {
-                    self?.wrongInputLabel.handleWrongInput(text: nil)
-                } else {
-                    self?.wrongInputLabel.handleWrongInput(text: "Грешно потребителско име или парола!")
-                }
+            print("#### Child login ...")
+            viewModel.setupProperties(email: usernameTextField.text, password: passwordTextField.text)
+            handleValidData()
+        }
+    }
+    
+    private func handleValidData() {
+        viewModel.login {  [weak self] isSuccessul in
+            if isSuccessul {
+                self?.wrongInputLabel.handleWrongInput(text: nil)
+            } else {
+                self?.wrongInputLabel.handleWrongInput(text: "Грешно потребителско име или парола!")
             }
         }
     }

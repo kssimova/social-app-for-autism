@@ -37,7 +37,8 @@ class Story: Codable {
             }
         }
         
-        if let questions = userDict["questions"] as? [Any] {
+        // TODO: fix to questions
+        if let questions = userDict["qustions"] as? [Any] {
             for question in questions {
                 if let dict = question as? [String:Any] {
                     let q = Question(value: dict)

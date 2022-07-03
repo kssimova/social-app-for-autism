@@ -53,7 +53,7 @@
                                 <constraint firstAttribute="height" constant="71" id="lhT-wi-i6Q"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-LS-dHc">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-LS-dHc">
                             <rect key="frame" x="63" y="16" width="257" height="28"/>
                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
                             <nil key="textColor"/>

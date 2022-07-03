@@ -109,11 +109,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="167" height="80"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="didTapFirstButton:" destination="-1" eventType="touchUpInside" id="vID-zI-Lwn"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwV-Ic-iTZ">
                                             <rect key="frame" x="183" y="0.0" width="167" height="80"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="didTapSecondButton:" destination="-1" eventType="touchUpInside" id="eNH-lh-Vik"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -129,11 +135,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="167" height="80"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="didTapThirdButton:" destination="-1" eventType="touchUpInside" id="GwW-z5-bcC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-gB-c5a">
                                             <rect key="frame" x="183" y="0.0" width="167" height="80"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="didTapFourthButton:" destination="-1" eventType="touchUpInside" id="gDM-Hr-cyt"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

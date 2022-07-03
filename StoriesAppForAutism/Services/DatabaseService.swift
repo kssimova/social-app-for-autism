@@ -68,14 +68,16 @@ class DatabaseService {
                     questionsValue.append(dict)
                 }
             }
-            parameters["qustions"] = questionsValue
+            parameters["questions"] = questionsValue
         }
         
         storiesReference.childByAutoId().setValue(parameters) { error, dbref in
             // If there's an error then the upload to database has failed
             if let _ = error {
+                print("#### THERE IS AN ERROR")
                 completion(false)
             } else {
+                print("#### UPLoADING STORY SUCCESSFUL")
                 completion(true)
             }
         }

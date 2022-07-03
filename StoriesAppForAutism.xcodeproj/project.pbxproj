@@ -32,8 +32,6 @@
 		D257C51D2838C00300263BCD /* SocialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C51C2838C00300263BCD /* SocialAppTests.swift */; };
 		D257C5272838C00300263BCD /* SocialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C5262838C00300263BCD /* SocialAppUITests.swift */; };
 		D257C5292838C00300263BCD /* SocialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C5282838C00300263BCD /* SocialAppUITestsLaunchTests.swift */; };
-		D257C53E2838D54700263BCD /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D257C53D2838D54700263BCD /* HomeCollectionViewCell.xib */; };
-		D257C5402838D7B100263BCD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C53F2838D7B100263BCD /* HomeCollectionViewCell.swift */; };
 		D257C5432838DE2600263BCD /* NibFileOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C5422838DE2600263BCD /* NibFileOwnerLoadable.swift */; };
 		D257C54828391D1400263BCD /* TablesCollections+RegisterXibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257C54728391D1400263BCD /* TablesCollections+RegisterXibs.swift */; };
 		D263F42C285BB6F200A9A8FD /* CreateStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D263F42B285BB6F200A9A8FD /* CreateStoryViewController.xib */; };
@@ -46,6 +44,7 @@
 		D27907E7285F706C00C0F813 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27907E6285F706C00C0F813 /* UILabelExtension.swift */; };
 		D2799FAE285A675000473EC1 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2799FAD285A675000473EC1 /* RegistrationViewController.xib */; };
 		D2799FB0285A675D00473EC1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799FAF285A675D00473EC1 /* RegistrationViewController.swift */; };
+		D280EB102870798C00E54562 /* PhaseStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280EB0F2870798C00E54562 /* PhaseStepViewModel.swift */; };
 		D2821C082858F479006A69C1 /* ChildLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2821C072858F479006A69C1 /* ChildLoginViewController.xib */; };
 		D2821C0A2858F4E3006A69C1 /* ChildLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2821C092858F4E3006A69C1 /* ChildLoginViewController.swift */; };
 		D2821C0C2858F701006A69C1 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2821C0B2858F6FA006A69C1 /* Poppins-SemiBold.ttf */; };
@@ -148,8 +147,6 @@
 		D257C5222838C00300263BCD /* StoriesAppForAutismUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoriesAppForAutismUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D257C5262838C00300263BCD /* SocialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppUITests.swift; sourceTree = "<group>"; };
 		D257C5282838C00300263BCD /* SocialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D257C53D2838D54700263BCD /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		D257C53F2838D7B100263BCD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D257C5422838DE2600263BCD /* NibFileOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibFileOwnerLoadable.swift; sourceTree = "<group>"; };
 		D257C54728391D1400263BCD /* TablesCollections+RegisterXibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TablesCollections+RegisterXibs.swift"; sourceTree = "<group>"; };
 		D263F42B285BB6F200A9A8FD /* CreateStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateStoryViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +159,7 @@
 		D27907E6285F706C00C0F813 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		D2799FAD285A675000473EC1 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		D2799FAF285A675D00473EC1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		D280EB0F2870798C00E54562 /* PhaseStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseStepViewModel.swift; sourceTree = "<group>"; };
 		D2821C072858F479006A69C1 /* ChildLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildLoginViewController.xib; sourceTree = "<group>"; };
 		D2821C092858F4E3006A69C1 /* ChildLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildLoginViewController.swift; sourceTree = "<group>"; };
 		D2821C0B2858F6FA006A69C1 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 				D2B73BC9283FA7EE00278E53 /* Coordinator */,
 				D2B73BC6283FA78100278E53 /* ViewModel */,
 				D257C5412838DE1600263BCD /* Protocols */,
-				D257C53C2838D51A00263BCD /* Cell */,
 				D257C5392838C99900263BCD /* Utils */,
 				D257C5382838C99200263BCD /* Model */,
 				D257C5352838C95500263BCD /* View */,
@@ -395,15 +392,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		D257C53C2838D51A00263BCD /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				D257C53D2838D54700263BCD /* HomeCollectionViewCell.xib */,
-				D257C53F2838D7B100263BCD /* HomeCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		D257C5412838DE1600263BCD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +435,7 @@
 			children = (
 				D26C2265286311D800FA7B8A /* ListeningPhaseStepViewController.xib */,
 				D26C22672863432A00FA7B8A /* ListeningPhaseStepViewController.swift */,
+				D280EB0F2870798C00E54562 /* PhaseStepViewModel.swift */,
 			);
 			path = ListeningPhase;
 			sourceTree = "<group>";
@@ -744,7 +733,6 @@
 				D2FE85202863B6B4006135B9 /* ReadingPhaseStepViewController.xib in Resources */,
 				D2BF39B02860E374007405F6 /* CreateTestTableViewCell.xib in Resources */,
 				D206BB872863C1E900A6AD4B /* EndOfPhaseViewController.xib in Resources */,
-				D257C53E2838D54700263BCD /* HomeCollectionViewCell.xib in Resources */,
 				D2D0C1DB285C3A880026F62C /* StoryDetailsViewController.xib in Resources */,
 				D2BB6E7128617D7700DED1E9 /* AddQuestionViewController.xib in Resources */,
 				D2B8C1602867457600B97339 /* AllPagesViewController.xib in Resources */,
@@ -911,6 +899,7 @@
 				D2D90275285CCE5F0018F8D8 /* StoryLibraryTableViewCell.swift in Sources */,
 				D2A8098E2866E42500A8AD78 /* BaseStoryModel.swift in Sources */,
 				D2FE85222863B6C4006135B9 /* ReadingPhaseStepViewController.swift in Sources */,
+				D280EB102870798C00E54562 /* PhaseStepViewModel.swift in Sources */,
 				D2F34EFD285B94BE00D8BFDA /* ChildrenProfilesViewController.swift in Sources */,
 				D263F42E285BB6FF00A9A8FD /* CreateStoryViewController.swift in Sources */,
 				D2F218CE283931C100527C74 /* HomeViewControllerViewModel.swift in Sources */,
@@ -942,7 +931,6 @@
 				D271B6A02866FDC900FD5949 /* CreateTestCellViewModel.swift in Sources */,
 				D257C5082838C00100263BCD /* SceneDelegate.swift in Sources */,
 				D2319A592857BDAE00C4F935 /* UIViewExtension.swift in Sources */,
-				D257C5402838D7B100263BCD /* HomeCollectionViewCell.swift in Sources */,
 				D2BB6E7328617D9800DED1E9 /* AddQuestionViewController.swift in Sources */,
 				D2D2DF412868304700F4050D /* Story.swift in Sources */,
 			);

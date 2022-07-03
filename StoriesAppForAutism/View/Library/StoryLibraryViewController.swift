@@ -19,8 +19,7 @@ class StoryLibraryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var storiesTableView: UITableView!
     
-    var createNewStorySelected : (() -> ()) = { }
-    let viewModel = StoryLibraryViewModel()
+    var viewModel : StoryLibraryViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +66,9 @@ class StoryLibraryViewController: UIViewController {
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Търсене...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkerLightGray])
         searchBar.layer.cornerRadius = 16.0
         
+        backButton.isHidden = viewModel.isFromChildProfile
+        createNewStoryButtonView.isHidden = viewModel.isFromChildProfile
+        
         createNewStoryButtonView.layer.cornerRadius = 16.0
         createStoryGradientView.startColor = .lightRoyalBlue
         createStoryGradientView.endColor = .purpley
@@ -78,7 +80,7 @@ class StoryLibraryViewController: UIViewController {
     }
     
     @objc func didTapCreateNewStoryButton() {
-        createNewStorySelected()
+        viewModel.createNewStorySelected()
     }
     
     @IBAction func didTapBackButton(_ sender: UIButton) {
@@ -97,7 +99,13 @@ extension StoryLibraryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 148
+        return 160
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let story = viewModel.snapshot?.stories[indexPath.row] {
+            viewModel.storySelected(story)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +117,12 @@ extension StoryLibraryViewController: UITableViewDelegate, UITableViewDataSource
         cell.storyTitleLabel.textColor = .black
         cell.topicLabel.text = viewModel.snapshot?.stories[indexPath.row].topic
         cell.ageGroupLabel.text = viewModel.snapshot?.stories[indexPath.row].ageGroup
+        
+        if let urlString = viewModel.snapshot?.stories[indexPath.row].coverImageURL, let url = URL(string: urlString) {
+            cell.storyImageView.af_setImage(withURL: url, cacheKey: nil, placeholderImage: UIImage(named: "library"), serializer: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: false)
+            cell.storyImageView.layer.cornerRadius = cell.storyImageView.frame.height / 2
+            cell.storyImageView.contentMode = .scaleAspectFill
+        }
         
         return cell
     }

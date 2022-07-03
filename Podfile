@@ -10,6 +10,7 @@ pod 'FirebaseAuth'
 pod 'FirebaseStorage'
 pod 'DropDown'
 pod 'IQKeyboardManagerSwift'
+pod 'AlamofireImage'
 
   # Pods for StoriesAppForAutism
 

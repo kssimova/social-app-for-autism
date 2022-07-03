@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class ListeningPhaseStepViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
@@ -28,10 +30,23 @@ class ListeningPhaseStepViewController: UIViewController {
     @IBOutlet weak var nextStepButtonImageView: UIImageView!
     @IBOutlet weak var nextStepButtonLabel: UILabel!
     
+    var audioPlayer: AVAudioPlayer!
+    
+    var viewModel: PhaseStepViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGestures()
         setupUI()
+    }
+    
+    private func setupGestures() {
+        let pressToPlayGesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlayButton))
+        playButtonView.addGestureRecognizer(pressToPlayGesture)
+        
+        let nextStepGesture = UITapGestureRecognizer(target: self, action: #selector(didTapNextStepButton))
+        nextStepButtonView.addGestureRecognizer(nextStepGesture)
     }
     
     private func setupUI() {
@@ -43,16 +58,20 @@ class ListeningPhaseStepViewController: UIViewController {
         
         headerImageView.image = UIImage(named: "listeningPhase")
         
-        headerLabel.text = "Мария и нейната учителка"
+        headerLabel.text = viewModel.story?.title
         headerLabel.textColor = .black
         
         closeButton.setBackgroundImage(UIImage(named: "x")?.withRenderingMode(.alwaysTemplate), for: .normal)
         closeButton.tintColor = .black
         
-        stepLabel.text = "Стъпка 1 от 4"
+        stepLabel.text = String(format: "Стъпка %d от %d", viewModel.step, viewModel.story?.pages.count ?? 1)
         stepLabel.textColor = .black
         
-        questionLabel.text = "Мария и нейната учителка си говорят."
+        if let url = viewModel.story?.pages[viewModel.step - 1].imageDownloadURL {
+            questionImageView.af_setImage(withURL: url, cacheKey: nil, placeholderImage: UIImage(named: "library"), serializer: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: false)
+        }
+        
+        questionLabel.text = viewModel.story?.pages[viewModel.step - 1].description
         questionLabel.textColor = .black
         
         questionView.backgroundColor = .white
@@ -78,5 +97,57 @@ class ListeningPhaseStepViewController: UIViewController {
         nextStepButtonLabel.textColor = .white
         
         questionImageView.layer.cornerRadius = 16.0
+        
+        preparePlayer()
     }
+    
+    func setStory() {
+//        DispatchQueue.main.async {
+//            self.headerLabel.text = self.viewModel.story.title
+//            self.stepLabel.text = String(format: "Стъпка %d от %d", self.viewModel.step, self.viewModel.story.pages.count)
+//            self.questionLabel.text = self.viewModel.story.pages[self.viewModel.step - 1].description
+//            self.
+//        }
+    }
+    
+    func preparePlayer() {
+        guard let url = viewModel.story?.pages[self.viewModel.step - 1].audioDownloadURL else {
+            print("Invalid URL")
+            return
+        }
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(AVAudioSession.Category.playback)
+            let soundData = try Data(contentsOf: url)
+            audioPlayer = try AVAudioPlayer(data: soundData)
+            audioPlayer.prepareToPlay()
+            audioPlayer.volume = 0.7
+            audioPlayer.delegate = self
+            print("#### Finished preparing audio player")
+        } catch {
+            print(error)
+        }
+    }
+    
+    @objc func didTapPlayButton() {
+        print("#### Play button pressed")
+        audioPlayer.play()
+    }
+    
+    @objc func didTapNextStepButton() {
+        print("#### next step button pressed")
+        viewModel.nextStepSelected()
+    }
+    
+    @IBAction func didTapCloseButton(_ sender: UIButton) {
+        viewModel.closeSelected()
+    }
+    
+    deinit{
+        print("#### Deinit called on Listening phase")
+    }
+}
+
+extension ListeningPhaseStepViewController: AVAudioPlayerDelegate {
+    
 }
